@@ -63,6 +63,11 @@ main {
   color: hsl(245deg, 75%, 52%);
   font-weight: 700;
 }
+.card__text--link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+  cursor: pointer;
+}
 .card__plan {
   font-size: 0.9rem;
   background-color: hsl(225deg, 100%, 98%);
@@ -92,9 +97,18 @@ main {
   color: white;
   box-shadow: 0px 1.2rem 10px 0px hsl(225deg, 100%, 94%);
 }
+.card .btn--payment:hover {
+  opacity: 0.8;
+  text-decoration: none;
+  cursor: pointer;
+}
 .card .btn--cancel {
   background-color: transparent;
   color: hsl(224deg, 23%, 55%);
+}
+.card .btn--cancel:hover {
+  cursor: pointer;
+  color: hsl(223deg, 47%, 23%);
 }
 
 @media screen and (max-width: 750px) {

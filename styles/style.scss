@@ -20,6 +20,17 @@ $card-height: 700px;
     justify-content: center;
 }
 
+@mixin hoverPrimary(){
+    opacity: 0.8;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@mixin hoverSecondary(){
+    cursor: pointer;
+    color: $blue-dark;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -84,6 +95,10 @@ main{
     &__text--link{
         color: $blue-bright;
         font-weight: $font-bold;
+
+        &:hover{
+            @include hoverPrimary();
+        }
     }
 
     &__plan{
@@ -110,15 +125,24 @@ main{
         padding: 1rem;
         font-weight: $font-bolder;
         border-radius: 10px;
+        
         &--payment{
             background-color: $blue-bright;
             color: white;
             box-shadow: 0px 1.2rem 10px 0px $blue;
+
+            &:hover{
+                @include hoverPrimary();
+            }
         }
 
         &--cancel{
             background-color: transparent;
             color: $blue-gray;
+
+            &:hover{
+                @include hoverSecondary();
+            }
         }
     }
 }
