@@ -10,8 +10,9 @@ $font-regular: 500;
 $font-bold: 700;
 $font-bolder: 900;
 
-$card-width: 480px;
-$card-height: 835px;
+
+$card-width: 450px;
+$card-height: 700px;
 
 @mixin gridCenter(){
     display: grid;
@@ -19,8 +20,137 @@ $card-height: 835px;
     justify-content: center;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 main{
     height: 100vh;
     width: 100vw;
+    background-image: url('../images/pattern-background-desktop.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: $blue;
+
     @include gridCenter();
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.card{
+    height: $card-height;
+    width: $card-width;
+    border-radius: 1rem;
+    background-color: #fff;
+    grid-template-rows: 0.35fr 0.85fr 0.25fr;
+    @include gridCenter();
+    gap: 1rem; 
+    box-shadow: -1px 5px 13px 0px hsla(223, 47%, 23%, 0.2);
+
+    &__image{
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        // max-height: 145px;
+        width: 100%;
+    }
+
+    &__body{
+        color: $blue-gray;
+        padding: 1rem 2.5rem;
+        width: 100%;
+        align-self: start;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        height: 100%;
+        gap: 1rem;
+       
+    }
+   
+    &__header{
+        @include gridCenter();
+        text-align: center;
+        gap: 1rem;
+        padding: 0 2rem;
+    }
+    &__title{
+        color: $blue-dark;
+    }
+
+    &__text--bold{
+        font-weight: $font-bold;
+        color: $blue-dark ;
+    }
+
+    &__text--link{
+        color: $blue-bright;
+        font-weight: $font-bold;
+    }
+
+    &__plan{
+        font-size: 0.9rem;
+        background-color: $blue-pale;   padding: 1rem 2rem;
+        padding: 1rem 2rem;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 0.25fr 1fr 0.25fr;
+        gap: 1rem;
+        align-items: center;
+        border-radius: 10px;
+        max-height: 100px;
+    }
+
+    &__footer{
+        display: grid;
+        padding: 1rem 2.5rem;
+        gap: 1rem;
+    }
+
+    .btn{
+        border: none;
+        padding: 1rem;
+        font-weight: $font-bolder;
+        border-radius: 10px;
+        &--payment{
+            background-color: $blue-bright;
+            color: white;
+            box-shadow: 0px 1.2rem 10px 0px $blue;
+        }
+
+        &--cancel{
+            background-color: transparent;
+            color: $blue-gray;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    $card-width: 325px;
+    $card-height: 565px;
+
+    main{
+        background-image: url('../images/pattern-background-mobile.svg');    
+    }
+
+    .card{
+        height: $card-height;
+        width: $card-width;
+        gap: 0;
+        grid-template-rows: 0.35fr 0.5fr 1fr;
+        &__image{
+            width: $card-width;
+        }
+
+        &__body{
+            padding: 1.5rem 1.5rem 0 1.5rem;
+        }
+
+        &__header{
+            padding: 0;
+        }
+
+        &__plan{
+            height: 80px;
+            padding: 1rem;
+        }
+    }
 }
