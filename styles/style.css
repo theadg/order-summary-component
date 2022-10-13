@@ -34,6 +34,10 @@ main {
   border-top-right-radius: 1rem;
   width: 100%;
 }
+.card__title {
+  font-size: 1.85rem;
+  font-weight: bolder;
+}
 .card__body {
   color: hsl(224deg, 23%, 55%);
   padding: 2rem 2.5rem 0 2.5rem;

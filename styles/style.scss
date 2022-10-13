@@ -61,10 +61,13 @@ main{
     &__image{
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
-        // max-height: 145px;
         width: 100%;
     }
 
+    &__title{
+        font-size: 1.85rem;
+        font-weight: bolder;
+    }
     &__body{
         color: $blue-gray;
         padding: 2rem 2.5rem 0 2.5rem;
